@@ -47,8 +47,12 @@ function getTime(date) {
  * '03 Dec 1995 00:12:00 UTC' => 'Sunday'
  * '2024-01-30T00:00:00.000Z' => 'Tuesday'
  */
-function getDayName(/* date */) {
-  throw new Error('Not implemented');
+function getDayName(date) {
+  const d = new Date(date);
+  const options = {
+    weekday: 'long',
+  };
+  return d.toLocaleDateString('en-US', options);
 }
 
 /**
